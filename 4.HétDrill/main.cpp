@@ -11,6 +11,7 @@ class B1
         {
             cout<<"B1::f()"<<endl;
         }
+        virtual void pvf()=0;
 };
 
 class D1:public B1
@@ -21,10 +22,6 @@ class D1:public B1
         }
         void f(){
             cout<<"D1::f()"<<endl;
-        }
-        virtual void pvf()
-        {
-            cout<<"D1::pvf()"<<endl;
         }
 };
 class D2:public D1{
@@ -37,15 +34,13 @@ class D2:public D1{
 class B2
 {
     public:
-        virtual void pvf(){
-            cout<<"B2::pvf()"<<endl;
-        }
+        virtual void pvf()=0;
 };
 
 class D21:public B2 
 {
-    string data="D21::pvf()";
     public:
+        string data;
         void pvf() override{
             cout<<data<<endl;
         }
@@ -53,8 +48,8 @@ class D21:public B2
 
 class D22:public B2 
 {
-    int data=10;
     public:
+        int data;
         void pvf() override{
             cout<<data<<endl;
         }
@@ -67,6 +62,7 @@ void f(B2& b2ref){
 int main()
 try{
     //01
+    /*
     B1 b1;
     b1.vf();
     b1.f();
@@ -78,15 +74,17 @@ try{
     B1& b1Ref=d1;
     b1Ref.vf();
     b1Ref.f();
+    */
     //06
     D2 d2;
     d2.f();
     d2.vf();
     d2.pvf();
     //07
-    B2 b2;
     D21 d21;
+    d21.data="D21::pvf()";
     D22 d22;
+    d22.data=10;
     f(d21);
     f(d22);
 
