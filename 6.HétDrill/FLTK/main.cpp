@@ -1,10 +1,8 @@
-#ifndef FLTK_GUARD
-#define FLTK_GUARD 1
-#include "FL/Fl.h"
-#include "FL/Fl_Box.h"
-#include "FL/Fl_Window.h"
+/*
+ g++ main.cpp -o main `fltk-config --ldflags --use-images`
 
-#endif
+*/
+#include "fltk.h"
 int main()
 {
     Fl_Window window(200,200,"Window title");
