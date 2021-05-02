@@ -1,0 +1,10 @@
+Paper 1 10.1
+Pencil 2 10.2
+Tomato 3 10.3
+Peper 4 10.4
+Sand 5 10.5
+Dirt 6 10.6
+Turkey 7 10.7
+Domino 8 10.8
+Apple 9 10.9
+Potato 10 10.11
